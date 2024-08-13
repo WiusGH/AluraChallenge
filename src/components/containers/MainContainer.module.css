@@ -2,23 +2,26 @@
 
 .mainContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   background-color: var(--primary-color);
-  gap: 2%;
   padding: 2%;
 }
 
 .leftContainer {
-  width: 80%;
+  width: 12%;
 }
 
 .aluraLogo {
-  margin: 0 80% 4% 0;
-  width: 50px;
+  height: 50px;
   &:hover {
     rotate: 360deg;
     transition: 1s;
   }
+}
+
+.middleContainer {
+  margin: 6% 4% 0;
+  width: 70%;
 }
 
 .textArea {
@@ -29,7 +32,7 @@
   min-height: 60vh;
   resize: none;
   padding: 0;
-  width: 65%;
+  width: 100%;
   &::placeholder {
     color: var(--quaternary-color);
     opacity: 1;
@@ -46,17 +49,19 @@
 
 .alert {
   color: var(--quaternary-color);
+  margin-right: 55%;
   font-size: 1.2rem;
 }
 
 .encrypt {
   background-color: var(--quaternary-color);
   border: none;
-  border-radius: 15px;
+  border-radius: 25px;
   color: white;
   font-size: 1.2rem;
   margin-right: 2%;
-  padding: 10px 11%;
+  padding: 10px;
+  width: 45%;
   &:hover {
     cursor: pointer;
     opacity: 0.7;
@@ -69,11 +74,12 @@
 .decrypt {
   background-color: var(--secondary-color);
   border: none;
-  border-radius: 15px;
+  border-radius: 25px;
   color: var(--quaternary-color);
   font-size: 1.2rem;
   outline: 1px solid var(--quaternary-color);
-  padding: 10px 10%;
+  padding: 10px;
+  width: 45%;
   &:hover {
     cursor: pointer;
     opacity: 0.7;
@@ -90,7 +96,7 @@
   justify-content: center;
   gap: 1%;
   background-color: white;
-  border-radius: 15px;
+  border-radius: 25px;
   width: 25%;
   h4 {
     font-size: 1.5rem;
@@ -118,4 +124,39 @@
   font-size: 1rem;
   margin-top: 8px;
   width: 100%
+}
+
+.resultTextArea {
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  height: 85%;
+  margin: 0;
+  resize: none;
+  padding: 0;
+  width: 85%;
+  &:focus {
+    outline: none;
+    &::placeholder {
+      opacity: 0.5;
+    }
+  }
+}
+
+.copy {
+  background-color: white;
+  border: none;
+  border-radius: 25px;
+  color: black;
+  font-size: 1.2rem;
+  margin-right: 2%;
+  outline: 1px solid var(--quaternary-color);
+  padding: 10px 30%;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  &:active {
+    scale: 0.9;
+  }
 }

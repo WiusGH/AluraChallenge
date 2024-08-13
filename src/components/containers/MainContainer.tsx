@@ -55,6 +55,8 @@ const MainContainer = () => {
     <div className={style.mainContainer}>
       <div className={style.leftContainer}>
         <img className={style.aluraLogo} src={aluraLogo} alt="Alura logo"></img>
+      </div>
+      <div className={style.middleContainer}>
         <div>
           {invalidInput && (
             <div className={style.invalidInputNotification}>
@@ -91,7 +93,10 @@ const MainContainer = () => {
       <div className={style.rightContainer}>
         {result ? (
           <>
-            <textarea>{result}</textarea>
+            <textarea
+              className={style.resultTextArea}
+              value={result}
+            ></textarea>
             <button
               className={style.copy}
               type="button"
