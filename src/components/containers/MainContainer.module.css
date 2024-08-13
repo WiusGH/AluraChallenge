@@ -2,5 +2,120 @@
 
 .mainContainer {
   display: flex;
-  background-color: var(--tertiary-color);
+  justify-content: space-between;
+  background-color: var(--primary-color);
+  gap: 2%;
+  padding: 2%;
+}
+
+.leftContainer {
+  width: 80%;
+}
+
+.aluraLogo {
+  margin: 0 80% 4% 0;
+  width: 50px;
+  &:hover {
+    rotate: 360deg;
+    transition: 1s;
+  }
+}
+
+.textArea {
+  border: none;
+  background-color: transparent;
+  font-size: 2rem;
+  margin: 0;
+  min-height: 60vh;
+  resize: none;
+  padding: 0;
+  width: 65%;
+  &::placeholder {
+    color: var(--quaternary-color);
+    opacity: 1;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  &:focus {
+    outline: none;
+    &::placeholder {
+      opacity: 0.5;
+    }
+  }
+}
+
+.alert {
+  color: var(--quaternary-color);
+  font-size: 1.2rem;
+}
+
+.encrypt {
+  background-color: var(--quaternary-color);
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-size: 1.2rem;
+  margin-right: 2%;
+  padding: 10px 11%;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  &:active {
+    scale: 0.9;
+  }
+}
+
+.decrypt {
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 15px;
+  color: var(--quaternary-color);
+  font-size: 1.2rem;
+  outline: 1px solid var(--quaternary-color);
+  padding: 10px 10%;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  &:active {
+    scale: 0.9;
+  }
+}
+
+.rightContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1%;
+  background-color: white;
+  border-radius: 15px;
+  width: 25%;
+  h4 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+}
+
+.magnifglass {
+  width: 60%;
+}
+
+
+
+
+.invalidInputNotification {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fdd;
+  color: #d00;
+  padding: 8px;
+  border: 1px solid #d00;
+  font-size: 1rem;
+  margin-top: 8px;
+  width: 100%
 }
