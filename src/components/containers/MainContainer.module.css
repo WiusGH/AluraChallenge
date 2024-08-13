@@ -1,0 +1,6 @@
+@import url('../../colors.css');
+
+.mainContainer {
+  display: flex;
+  background-color: var(--tertiary-color);
+}
