@@ -11,12 +11,12 @@ const MainContainer = () => {
 
   const textareaRef = useRef<HTMLTextAreaElement | null>(null); // Para controlar el tamaño del textarea
 
-  const invalidCharRegex = /[^a-zA-Z\s]/; // Para evitar que el usuario ingrese carcateres inválidos
+  const invalidCharRegex = /[^a-zA-ZñÑ\s.,¿?¡!]/; // Para evitar que el usuario ingrese carcateres inválidos
 
   // Para controlar el tamaño del textarea
   useEffect(() => {
     if (textareaRef.current) {
-      textareaRef.current.style.height = 'auto';
+      textareaRef.current.style.height = "auto";
       textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
     }
   }, [result]);
@@ -28,7 +28,9 @@ const MainContainer = () => {
       setInvalidInput(true);
     } else {
       setInvalidInput(false);
-      setText(event.target.value.toLowerCase().replace(/[^a-z\s]/g, ""));
+      setText(
+        event.target.value.toLowerCase().replace(/[^a-zA-ZñÑ\s.,¿?¡!]/g, "")
+      );
       console.log(text);
     }
   };
@@ -108,7 +110,7 @@ const MainContainer = () => {
         {result ? (
           <>
             <textarea
-            ref={textareaRef}
+              ref={textareaRef}
               className={style.resultTextArea}
               value={result}
             ></textarea>
@@ -127,8 +129,10 @@ const MainContainer = () => {
               src={magnifglass}
               alt="Person with magnifying glass"
             ></img>
-            <h4>Ningún mensaje fue encontrado</h4>
-            <p>Ingresa el texto que deseas encriptar o desencriptar.</p>
+            <div className={style.message}>
+              <h4>Ningún mensaje fue encontrado</h4>
+              <p>Ingresa el texto que deseas encriptar o desencriptar.</p>
+            </div>
           </>
         )}
       </div>
