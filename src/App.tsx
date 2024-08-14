@@ -7,9 +7,11 @@ import MainContainer from './components/containers/MainContainer';
 function App() {
   return (
     <div className="App">
-      <Header />
+      
       <MainContainer />
-      <Footer />
+      {/* Hice el header para que vaya arriba pero me gustó más como se ve como footer */}
+      <Header /> 
+      {/* <Footer /> */}
     </div>
   );
 }

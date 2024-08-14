@@ -65,12 +65,19 @@
   color: var(--quaternary-color);
   margin-right: 55%;
   font-size: 1.2rem;
+  @media (max-width: 820px) {
+    margin-right: 0;
+  }
 }
 
 .buttons {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  @media (max-width: 820px) {
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 
 .encrypt {
@@ -89,6 +96,10 @@
   &:active {
     scale: 0.9;
   }
+  @media (max-width: 820px) {
+    width: 100%;
+    margin-right: 0;
+  }
 }
 
 .decrypt {
@@ -106,6 +117,9 @@
   }
   &:active {
     scale: 0.9;
+  }
+  @media (max-width: 820px) {
+    width: 100%;
   }
 }
 
