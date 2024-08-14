@@ -5,23 +5,23 @@ import magnifglass from "../../assets/images/magnifglass.png";
 import { FaCircleExclamation } from "react-icons/fa6";
 
 const MainContainer = () => {
-  const [text, setText] = useState("");
-  const [result, setResult] = useState("");
-  const [invalidInput, setInvalidInput] = useState(false);
+  const [text, setText] = useState(""); // Testo ingresado por el usuario
+  const [result, setResult] = useState(""); // Texto encriptado
+  const [invalidInput, setInvalidInput] = useState(false); // Para indicar que el texto ingresado es inválido
 
-  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+  const textareaRef = useRef<HTMLTextAreaElement | null>(null); // Para controlar el tamaño del textarea
 
-  const invalidCharRegex = /[^a-zA-Z\s]/;
+  const invalidCharRegex = /[^a-zA-Z\s]/; // Para evitar que el usuario ingrese carcateres inválidos
 
+  // Para controlar el tamaño del textarea
   useEffect(() => {
     if (textareaRef.current) {
-      // Reset height to auto before setting the new height
       textareaRef.current.style.height = 'auto';
-      // Set height based on scrollHeight
       textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
     }
   }, [result]);
 
+  // Para evitar que el usuario ingrese caracteres inválidos
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     let input = event.target.value;
     if (invalidCharRegex.test(input)) {
@@ -33,6 +33,7 @@ const MainContainer = () => {
     }
   };
 
+  // Para encriptar el texto
   const encrypt = (text: string) => {
     const encrypted = text
       .replace(/e/g, "enter")
@@ -43,6 +44,7 @@ const MainContainer = () => {
     setResult(encrypted);
   };
 
+  // Para desencriptar el texto
   const decrypt = (text: string) => {
     const decrypted = text
       .replace(/enter/g, "e")
@@ -53,6 +55,7 @@ const MainContainer = () => {
     setResult(decrypted);
   };
 
+  // Para copiar el texto encriptado
   const copy = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text);
