@@ -5,6 +5,10 @@
   justify-content: space-evenly;
   background-color: var(--primary-color);
   padding: 2%;
+  @media (max-width: 820px) {
+    flex-direction: column;
+    padding: 5%;
+  }
 }
 
 .leftContainer {
@@ -22,6 +26,9 @@
 .middleContainer {
   margin: 6% 4% 0;
   width: 70%;
+  @media (max-width: 820px) {
+    width: 90%;
+  }
 }
 
 .textArea {
@@ -29,7 +36,7 @@
   background-color: transparent;
   font-size: 2rem;
   margin: 0;
-  min-height: 60vh;
+  min-height: 50vh;
   resize: none;
   padding: 0;
   width: 100%;
@@ -45,12 +52,25 @@
       opacity: 0.5;
     }
   }
+  @media (max-width: 820px) {
+    min-height: 30vh;
+    font-size: 1.5rem;
+  }
+  @media (min-height: 900px) {
+    min-height: 40vh;
+  }
 }
 
 .alert {
   color: var(--quaternary-color);
   margin-right: 55%;
   font-size: 1.2rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .encrypt {
@@ -61,7 +81,7 @@
   font-size: 1.2rem;
   margin-right: 2%;
   padding: 10px;
-  width: 45%;
+  width: 50%;
   &:hover {
     cursor: pointer;
     opacity: 0.7;
@@ -79,7 +99,7 @@
   font-size: 1.2rem;
   outline: 1px solid var(--quaternary-color);
   padding: 10px;
-  width: 45%;
+  width: 50%;
   &:hover {
     cursor: pointer;
     opacity: 0.7;
@@ -93,10 +113,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 1%;
+  justify-content: space-between;
   background-color: white;
   border-radius: 25px;
+  padding: 2% 0;
   width: 25%;
   h4 {
     font-size: 1.5rem;
@@ -104,10 +124,23 @@
   p {
     font-size: 1.2rem;
   }
+  @media (max-width: 820px) {
+    margin-top: 5%;
+    width: 100%;
+  }
+  h4 {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 1rem;
+  }
 }
 
 .magnifglass {
   width: 60%;
+  @media (max-width: 820px) {
+    display: none;
+  }
 }
 
 
@@ -130,16 +163,22 @@
   border: none;
   background-color: transparent;
   font-size: 1.5rem;
-  height: 85%;
   margin: 0;
   resize: none;
   padding: 0;
   width: 85%;
+  max-height: 60vh;
+  box-sizing: border-box;
+  box-sizing: border-box;
   &:focus {
     outline: none;
     &::placeholder {
       opacity: 0.5;
     }
+  }
+  @media (max-width: 820px) {
+    font-size: 1.2rem;
+
   }
 }
 
@@ -149,7 +188,7 @@
   border-radius: 25px;
   color: black;
   font-size: 1.2rem;
-  margin-right: 2%;
+  margin: 20px 2% 0 0;
   outline: 1px solid var(--quaternary-color);
   padding: 10px 30%;
   &:hover {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import aluraLogo from "../../assets/images/alura.svg";
 import style from "./MainContainer.module.css";
 import magnifglass from "../../assets/images/magnifglass.png";
@@ -9,7 +9,18 @@ const MainContainer = () => {
   const [result, setResult] = useState("");
   const [invalidInput, setInvalidInput] = useState(false);
 
+  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+
   const invalidCharRegex = /[^a-zA-Z\s]/;
+
+  useEffect(() => {
+    if (textareaRef.current) {
+      // Reset height to auto before setting the new height
+      textareaRef.current.style.height = 'auto';
+      // Set height based on scrollHeight
+      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+    }
+  }, [result]);
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     let input = event.target.value;
@@ -94,6 +105,7 @@ const MainContainer = () => {
         {result ? (
           <>
             <textarea
+            ref={textareaRef}
               className={style.resultTextArea}
               value={result}
             ></textarea>
