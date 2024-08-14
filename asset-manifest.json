@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.77f0cf88.css",
-    "main.js": "/static/js/main.32877613.js",
-    "static/media/magnifglass.png": "/static/media/magnifglass.86e4f43c387ba7b0c2bc.png",
-    "static/media/alura.svg": "/static/media/alura.57b0b041d5b62f5cb4a158904d11160a.svg",
-    "index.html": "/index.html",
-    "main.77f0cf88.css.map": "/static/css/main.77f0cf88.css.map",
-    "main.32877613.js.map": "/static/js/main.32877613.js.map"
+    "main.css": "/AluraChallenge/static/css/main.77f0cf88.css",
+    "main.js": "/AluraChallenge/static/js/main.38dc42a4.js",
+    "static/media/magnifglass.png": "/AluraChallenge/static/media/magnifglass.86e4f43c387ba7b0c2bc.png",
+    "static/media/alura.svg": "/AluraChallenge/static/media/alura.57b0b041d5b62f5cb4a158904d11160a.svg",
+    "index.html": "/AluraChallenge/index.html",
+    "main.77f0cf88.css.map": "/AluraChallenge/static/css/main.77f0cf88.css.map",
+    "main.38dc42a4.js.map": "/AluraChallenge/static/js/main.38dc42a4.js.map"
   },
   "entrypoints": [
     "static/css/main.77f0cf88.css",
-    "static/js/main.32877613.js"
+    "static/js/main.38dc42a4.js"
   ]
 }
