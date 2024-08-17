@@ -8,6 +8,7 @@ const MainContainer = () => {
   const [text, setText] = useState(""); // Testo ingresado por el usuario
   const [result, setResult] = useState(""); // Texto encriptado
   const [invalidInput, setInvalidInput] = useState(false); // Para indicar que el texto ingresado es inválido
+  const [copyAlert, setCopyAlert] = useState(false); // Para mostrar un alerta cuando se copie el texto
 
   const textareaRef = useRef<HTMLTextAreaElement | null>(null); // Para controlar el tamaño del textarea
 
@@ -65,6 +66,11 @@ const MainContainer = () => {
     } catch (err) {
       console.error("Failed to copy text: ", err);
     }
+    setCopyAlert(true);
+
+    setTimeout(() => {
+      setCopyAlert(false);
+    }, 1000);
   };
 
   return (
@@ -77,6 +83,11 @@ const MainContainer = () => {
           {invalidInput && (
             <div className={style.invalidInputNotification}>
               <p>Por favor, ingrese solo letras minúsculas y sin tildes.</p>
+            </div>
+          )}
+          {copyAlert && (
+            <div className={style.copyAlert}>
+              <p>Texto copiado</p>
             </div>
           )}
           <textarea

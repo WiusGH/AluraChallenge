@@ -180,6 +180,19 @@
   width: 100%;
 }
 
+.copyAlert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(71, 224, 153);
+  color: green;
+  padding: 8px;
+  border: 1px solid green;
+  font-size: 1rem;
+  margin-top: 8px;
+  width: 100%;
+}
+
 .resultTextArea {
   border: none;
   background-color: transparent;
